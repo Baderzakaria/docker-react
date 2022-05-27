@@ -9,12 +9,3 @@ services:
     volumes:
       - /app/node_modules
       - .:/app
-  tests: #this will run aother container for testing the npm
-    stdin_open: true
-    build:
-      context: .
-      dockerfile: Dockerfile.dev
-    volumes:
-      - /app/node_modules
-      - .:/app
-    command: ['npm', 'run', 'test'] #command for testing the npm

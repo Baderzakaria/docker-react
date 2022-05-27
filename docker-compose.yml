@@ -9,7 +9,7 @@ services:
     volumes:
       - /app/node_modules
       - .:/app
-  tests:
+  tests: #this will run aother container for testing the npm
     stdin_open: true
     build:
       context: .
@@ -17,4 +17,4 @@ services:
     volumes:
       - /app/node_modules
       - .:/app
-    command: ['npm', 'run', 'test']
+    command: ['npm', 'run', 'test'] #command for testing the npm
